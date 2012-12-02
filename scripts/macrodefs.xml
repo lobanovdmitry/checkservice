@@ -1,0 +1,55 @@
+<project name="services" default="">
+  <macrodef name="cleanClasses">
+    <sequential>
+      <delete dir="classes" includeemptydirs="true"/>
+      <mkdir dir="classes"/>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="compile">
+    <attribute name="srcDir"/>
+    <attribute name="classPath"/>
+    <attribute name="destDir"/>
+    <sequential>
+      <javac source="1.6"
+        srcdir="@{srcDir}"
+        destdir="@{destDir}"
+        classpath="@{classpath}"
+        fork="yes"
+        memoryMaximumSize="512m"
+        failonerror="true"
+        debug="on"/>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="createEmptyDir">
+    <attribute name="dir"/>
+    <sequential>
+      <delete dir="@{dir}"/>
+      <mkdir dir="@{dir}"/>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="createJar">
+    <attribute name="srcdir"/>
+    <attribute name="jarfile"/>
+    <attribute name="tmpdir"/>
+    <attribute name="classpath"/>
+    <attribute name="excludes" default=""/>
+    <attribute name="includes" default="**/*"/>
+    <sequential>
+      <javac srcdir="@{srcdir}" destdir="@{tmpdir}" classpath="@{classpath}" fork="yes" memoryMaximumSize="512m"/>
+      <delete file="@{jarfile}" failonerror="no"/>
+      <jar jarfile="@{jarfile}" basedir="@{tmpdir}" excludes="@{excludes}" includes="@{includes}"/>
+    </sequential>
+  </macrodef>
+
+  <macrodef name="setTime" description="Set the property to the current time">
+    <attribute name="property"/>
+    <sequential>
+      <tstamp>
+        <format property="@{property}" pattern="HH:mm:ss" locale="en"/>
+      </tstamp>
+    </sequential>
+  </macrodef>
+</project>

@@ -1,0 +1,81 @@
+<project name="build_script" default="RunAllTestsWithReport" basedir="..">
+	<property file="${basedir}/scripts/ant.properties"/>
+	<import file="${basedir}/scripts/macrodefs.xml"/>
+	
+	<property name="tmp" value="${basedir}/tmp"/>
+	<property name="generated" value="${basedir}/generated"/>
+	<property name="classes" value="${generated}/classes"/>
+	<property name="instrumented" value="${generated}/instrumented"/>
+	
+	<property name="srcdir" value="${basedir}/src"/>
+	<property name="testdir" value="${basedir}/test"/>
+	
+	<property name="cobertura" value="/opt/cobertura-1.9.4.1"/>
+	
+	<path id="cobertura.classpath">
+	    <fileset dir="${cobertura}">
+	        <include name="cobertura.jar" />
+	        <include name="lib/**/*.jar" />
+	    </fileset>
+	</path>
+	<taskdef classpathref="cobertura.classpath" resource="tasks.properties" />
+	
+	<target name="RebuildAll">
+		<createEmptyDir dir="${classes}"/>
+	    <compile srcDir="${srcdir};${testdir}" destDir="${classes}" classPath="${classpath};${classpath.test}"/>
+	</target>
+	
+	<target name="RunAllTestsWithReport"  depends="RebuildAll">
+		<delete file="${basedir}/cobertura.ser" failonerror="false"/>
+		<createEmptyDir dir="${generated}/tests"/>
+		<createEmptyDir dir="${generated}/junit_report"/>
+		<createEmptyDir dir="${generated}/cover_report"/>
+		
+		<cobertura-instrument todir="${instrumented}">
+		    <ignore regex="org.apache.log4j.*" />
+		    <fileset dir="${classes}">
+		        <include name="**/*.class" />
+		    	<exclude name="com/wbem/checker/modules/executors/**" />
+		    	<exclude name="**/*Test.class" />
+		    </fileset>
+		</cobertura-instrument>
+				
+		<junit printsummary="yes" haltonfailure="no">
+	      <sysproperty key="net.sourceforge.cobertura.datafile" file="${basedir}/cobertura.ser" />
+		  <classpath>
+		  	<pathelement path="${instrumented}"/>
+		  	<pathelement path="${classes}"/>
+		  	<pathelement path="${classpath}"/>
+		  	<pathelement path="${classpath.test}"/>
+		  </classpath>
+
+		  <formatter type="xml"/>
+
+		  <classpath refid="cobertura.classpath" />
+		  <batchtest fork="yes" todir="${generated}/tests">
+		    <fileset dir="${basedir}/test">
+		      <include name="**/*Test.java"/>
+		    </fileset>
+		  </batchtest>
+		</junit>
+		
+	    <junitreport todir="${generated}/junit_report">
+	      <fileset dir="${generated}/tests">
+	        <include name="TEST-*.xml"/>
+	      </fileset>
+	      <report format="frames" todir="${generated}/junit_report"/>
+	    </junitreport>
+		
+		<cobertura-report format="html" destdir="${generated}/cover_report" >
+		    <fileset dir="${basedir}/src">
+		        <include name="**/*.java" />
+		    </fileset>
+		</cobertura-report>
+   </target>
+	
+	<target name="CreateJar">
+		<createEmptyDir dir="${tmp}"/>
+		<createJar srcdir="${basedir}/src" classpath="${classpath}" jarfile="${generated}/main.jar"  tmpdir="${tmp}"/>
+		<delete dir="${tmp}"/>
+	</target>
+</project>

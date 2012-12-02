@@ -1,0 +1,16 @@
+<checkServiceConfig>
+  <port>4126</port>
+  <threadPool>
+    <coreSize>10</coreSize>
+    <maxSize>10</maxSize>
+    <keepAlive timetype="MINUTES">10</keepAlive>
+  </threadPool>
+  <modules>
+    <module class="com.wbem.checker.modules.executors.PingRequestExecutor"/>
+    <module class="com.wbem.checker.modules.executors.CpuUsageRequestExecutor"/>
+    <module class="com.wbem.checker.modules.executors.MemoryUsageRequestExecutor"/>
+    <module class="com.wbem.checker.modules.executors.SwapUsageRequestExecutor"/>
+    <module class="com.wbem.checker.modules.executors.ProcessAliveRequestExecutor"/>
+    <!--module class="com.wbem.checker.modules.executors.FSVolumeRequestExecutor"/-->
+  </modules>
+</checkServiceConfig>
