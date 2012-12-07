@@ -1,5 +1,6 @@
 <project name="build_script" default="RunAllTestsWithReport" basedir="..">
 	<property file="${basedir}/scripts/ant.properties"/>
+	<property environment="env"/>
 	<import file="${basedir}/scripts/macrodefs.xml"/>
 	
 	<property name="tmp" value="${basedir}/tmp"/>
@@ -10,7 +11,7 @@
 	<property name="srcdir" value="${basedir}/src"/>
 	<property name="testdir" value="${basedir}/test"/>
 	
-	<property name="cobertura" value="/opt/cobertura-1.9.4.1"/>
+	<property name="cobertura" value="${env.COBERTURA_HOME}"/>
 	
 	<path id="cobertura.classpath">
 	    <fileset dir="${cobertura}">
@@ -36,7 +37,8 @@
 		    <fileset dir="${classes}">
 		        <include name="**/*.class" />
 		    	<exclude name="com/wbem/checker/modules/executors/**" />
-		    	<exclude name="**/*Test.class" />
+		    	<exclude name="**/Dummy*.class"/>
+		    	<exclude name="**/*Test*.class" />
 		    </fileset>
 		</cobertura-instrument>
 				

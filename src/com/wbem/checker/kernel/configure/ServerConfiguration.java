@@ -151,7 +151,7 @@ public class ServerConfiguration {
       if ( keepAliveTime != o.keepAliveTime ) {
         return false;
       }
-      if ( timeUnit != null ? timeUnit.equals(o.timeUnit) : o.timeUnit != null) {
+      if ( timeUnit != null ? !timeUnit.equals(o.timeUnit) : o.timeUnit != null) {
         return false;
       }
       return true;

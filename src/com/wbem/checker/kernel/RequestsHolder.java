@@ -40,7 +40,7 @@ public class RequestsHolder {
 
   private void validateRequest(RequestExecutor executor, Request request) throws InvalidParametersException {
     if (request.getHostname() == null) {
-      throw new ParameterNotFoundException("hostname");
+      throw new ParameterNotFoundException("hostname(-h)");
     }
     if (executor.isAuthentificateNeeded()) {
       if (request.getUsername() == null) {

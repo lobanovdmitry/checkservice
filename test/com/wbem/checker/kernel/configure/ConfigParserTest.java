@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import junit.framework.TestCase;
 
+import com.wbem.checker.api.DummyRequestExecutor;
 import com.wbem.checker.kernel.configure.ServerConfiguration.ThreadPoolConfiguration;
 import com.wbem.checker.kernel.configure.exceptions.IncorrectConfigurationValueException;
 import com.wbem.checker.kernel.configure.exceptions.XmlParsingException;

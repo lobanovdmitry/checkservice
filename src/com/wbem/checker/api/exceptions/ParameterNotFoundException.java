@@ -16,7 +16,7 @@ public class ParameterNotFoundException extends InvalidParametersException {
   public String getMessage() {
     StringBuffer buffer = new StringBuffer("Required parameters are not found: ");
     for ( int i = 0; i < parameters.length; i++ ) {
-      buffer.append(parameters[i]);
+      buffer.append("'").append(parameters[i]).append("'");
       if ( i + 1 < parameters.length ) {
         buffer.append(", ");
       }

@@ -38,13 +38,17 @@ public class CheckServer {
     }
   }
 
-  public static void main(String[] args) {
+  public static void main(String... args) {
     ServerConfiguration cfg = processArgs(args);
     if (cfg == null) {
       printUsage();
       return;
     }
     new CheckServer(cfg).start();
+  }
+  
+  void shutdown() {
+      executor.shutdown();
   }
   
   private static void printUsage() {

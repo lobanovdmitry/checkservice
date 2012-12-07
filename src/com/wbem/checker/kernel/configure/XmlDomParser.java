@@ -28,10 +28,6 @@ public class XmlDomParser {
 
   private static DOMParser domParser = new DOMParser();
 
-  private XmlDomParser() {
-    // no instanciation possible
-  }
-
   public static Element parse(File file, String expectedRootTag) throws XmlParsingException, IOException {
     if ( !file.exists() ) {
       throw new IOException(XmlMessages.fileNotFound(file.getPath()));
@@ -47,7 +43,9 @@ public class XmlDomParser {
     } catch ( Exception e ) {
       throw new XmlParsingException(e);
     } finally {
-      ParserUtils.close(reader);
+    	if ( reader != null ) {
+    		ParserUtils.close(reader);
+    	}
     }
   }
 
@@ -94,14 +92,6 @@ public class XmlDomParser {
       throw new XmlParsingException(XmlMessages.attributeNotSet(attributeName, node.getNodeName()));
     }
     return name;
-  }
-
-  public static String getNonEmptyMandatoryAttribute(Element node, String attributeName) throws XmlParsingException {
-    String value = getMandatoryAttribute(node, attributeName);
-    if ( value.length() == 0 ) {
-      throw new XmlParsingException(XmlMessages.nonEmptyValueIsRequired(attributeName, node.getNodeName()));
-    }
-    return value;
   }
 
   public static String getOptionalAttribute(Element node, String attributeName) {
@@ -209,10 +199,6 @@ public class XmlDomParser {
       return "Invalid root tag: expected '" + expectedRootTag + "', but found '" + tagName + "'";
     }
 
-    public static String nonEmptyValueIsRequired(String attributeName, String nodeName) {
-      return "Non empty value is required: tag '" + nodeName + "'" + ", attribute '" + attributeName + "'";
-    }
-
     public static String attributeNotSet(String attributeName, String nodeName) {
       return "Attribute is not set: tag '" + nodeName + "'" + ", attribute '" + attributeName + "'";
     }
@@ -239,6 +225,7 @@ public class XmlDomParser {
       while ( (line = reader.readLine()) != null ) {
         buffer.append(line);
       }
+      reader.close();
       return buffer.toString();
     }
 
