@@ -32,7 +32,7 @@ public class WBEMConnectionImpl implements WBEMConnection {
     this.credentials = credentials;
   }
  
-  public Object[] getAverageValue(String path, String property) throws WBEMException {
+  public Object[] getPropertyValuesOfAllInstances(String path, String property) throws WBEMException {
     CloseableIterator iterator = wbemClient.enumerateInstances(new CIMObjectPath(path, DEFAULT_NAMESPACE), true, true, true, new String[]{property});
     List<Object> properties = new ArrayList<Object>();
     while( iterator.hasNext() ) {

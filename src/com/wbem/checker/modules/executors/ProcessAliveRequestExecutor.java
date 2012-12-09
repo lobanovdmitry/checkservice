@@ -44,7 +44,7 @@ public class ProcessAliveRequestExecutor implements RequestExecutor {
     Response response = new Response();
     response.setCheckSeverity(isExist ? ResponseConstants.SEVERITY_OK : ResponseConstants.SEVERITY_CRITICAL);
     response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
-    response.setMessage(isExist ? "Process " + processName + " is alive" : "Process " + processName + " is not alive");
+    response.setMessage(isExist ? "Process '" + processName + "' is alive" : "Process '" + processName + "' is not alive");
     return response;
   }
 }

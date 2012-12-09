@@ -13,7 +13,7 @@ public class CpuUsageRequestExecutor extends AbstractLoadPercentageExecutor {
 
   @Override
   public Response execute(WBEMConnection connection) throws Exception {
-    Object[] values = connection.getAverageValue(path, property);
+    Object[] values = connection.getPropertyValuesOfAllInstances(path, property);
     int result = 0;
     for (Object value : values) {
       UnsignedInteger16 integer16 = (UnsignedInteger16) value;

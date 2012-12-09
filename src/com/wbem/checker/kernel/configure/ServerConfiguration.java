@@ -214,14 +214,14 @@ public class ServerConfiguration {
         return false;
       }
       Modules o = (Modules) obj;
-      if ( modules != null ? !(modules.equals(o.modules)) : o.modules != null ) {
+      if ( !(modules.equals(o.modules)) ) {
         return false;
       }
       return true;
     }
     @Override
     public int hashCode() {
-      return modules == null ? 29 : 29 * modules.hashCode();
+      return 29 * modules.hashCode();
     }
     
     @Override

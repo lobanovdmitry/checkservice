@@ -31,7 +31,7 @@ public class CheckServer {
     while(true){
       try {
         Socket socket = serverSocket.accept();
-        executor.execute(new QueryProcessTask(socket, requestsHolder));
+        executor.execute(new QueryProcessTask(socket.getInputStream(), socket.getOutputStream(), requestsHolder));
       } catch (IOException e) {
         e.printStackTrace();
       }

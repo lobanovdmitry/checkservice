@@ -9,9 +9,9 @@ import com.wbem.checker.api.data.Response;
 
 public class SwapUsageRequestExecutor extends AbstractLoadPercentageExecutor {
   private static final String REQUEST_TYPE = "swap_usage";
-  private static final String path = "Linux_OperatingSystem";
-  private static final String totalSwapProperty = "TotalSwapSpaceSize";
-  private static final String freeSwapProperty = "FreeSpaceInPagingFiles";
+  public static final String path = "Linux_OperatingSystem";
+  public static final String totalSwapProperty = "TotalSwapSpaceSize";
+  public static final String freeSwapProperty = "FreeSpaceInPagingFiles";
 
   @Override
   public Response execute(WBEMConnection connection) throws Exception {

@@ -34,11 +34,11 @@ public class PingRequestExecutor implements RequestExecutor {
       boolean pingResult = InetAddress.getByName(hostname).isReachable(DEFAULT_TIMEOUT);
       response.setCheckSeverity(pingResult ? ResponseConstants.SEVERITY_OK : ResponseConstants.SEVERITY_CRITICAL);
       response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
-      response.setMessage("Host '" + hostname + "' is " + (pingResult ? "" : "not") + " reachable through 'ping'");
+      response.setMessage("Host '" + hostname + "' is " + (pingResult ? "" : "not ") + "reachable through 'ping'");
     } catch (UnknownHostException e) {
       response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
       response.setCheckSeverity(ResponseConstants.SEVERITY_UNKNOWN);
-      response.setMessage("Unknown host: " + hostname);
+      response.setMessage("Unknown host: '" + hostname + "'");
     } catch (IOException e) {
       response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
       response.setCheckSeverity(ResponseConstants.SEVERITY_UNKNOWN);

@@ -16,9 +16,10 @@ public class ConnectionPool {
   
   private static Map<HostnameAndCredentials, WBEMConnectionImpl> allConnections = new HashMap<HostnameAndCredentials, WBEMConnectionImpl>();
   private static Map<HostnameAndCredentials, Long> liveConnectionTime = new HashMap<HostnameAndCredentials, Long>();
-  private static ConnectionsHeartBeat heartBeatDeamon = new ConnectionsHeartBeat(DEFAULT_TIME_OUT);
+  private static ConnectionsHeartBeat heartBeatDeamon;
   
   static {
+    heartBeatDeamon = new ConnectionsHeartBeat(DEFAULT_TIME_OUT);
     heartBeatDeamon.start();
   }
   

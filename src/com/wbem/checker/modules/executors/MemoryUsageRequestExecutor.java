@@ -9,9 +9,9 @@ import com.wbem.checker.api.data.Response;
 
 public class MemoryUsageRequestExecutor extends AbstractLoadPercentageExecutor {
   private static final String REQUEST_TYPE = "memory_usage";
-  private static final String path = "Linux_OperatingSystem";
-  private static final String totalMemoryProperty = "TotalVisibleMemorySize";
-  private static final String freeMemoryProperty = "FreePhysicalMemory";
+  public static final String path = "Linux_OperatingSystem";
+  public static final String totalMemoryProperty = "TotalVisibleMemorySize";
+  public static final String freeMemoryProperty = "FreePhysicalMemory";
 
   @Override
   public Response execute(WBEMConnection connection) throws Exception {

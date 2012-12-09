@@ -5,7 +5,7 @@ import javax.wbem.WBEMException;
 
 public interface WBEMConnection {
 
-  public Object[] getAverageValue(String path, String property) throws WBEMException;
+  public Object[] getPropertyValuesOfAllInstances(String path, String property) throws WBEMException;
 
   public boolean isInstanceExist(String path, String property, Object value) throws WBEMException;
 

@@ -70,7 +70,10 @@ public class XmlDomParserTest extends TestCase {
     }
 
     public void testBadSingleChild() throws Exception {
-        String configXml = "<root>" + "  <child/>" + "  <child/>" + "</root>";
+        String configXml = "<root>" + 
+                           "  <child/>" + 
+                           "  <child/>" + 
+                           "</root>";
         StringReader stringReader = new StringReader(configXml);
         try {
             Element root = XmlDomParser.parse(stringReader, "root");
@@ -82,7 +85,9 @@ public class XmlDomParserTest extends TestCase {
     }
 
     public void testGetMandatoryAttribute() throws Exception {
-        String configXml = "<root>" + "  <child mandatory1='' mandatory2='nonempty'/>" + "</root>";
+        String configXml = "<root>" + 
+                           "  <child mandatory1='' mandatory2='nonempty'/>" + 
+                           "</root>";
         StringReader stringReader = new StringReader(configXml);
         Element root = XmlDomParser.parse(stringReader, "root");
         Element child = XmlDomParser.getSingleChild(root, "child");
@@ -107,7 +112,9 @@ public class XmlDomParserTest extends TestCase {
     }
 
     public void testGetOptionalAttribute() throws Exception {
-        String configXml = "<root>" + "  <child optional1='' optional2='nonempty'/>" + "</root>";
+        String configXml = "<root>" + 
+                           "  <child optional1='' optional2='nonempty'/>" + 
+                           "</root>";
         StringReader stringReader = new StringReader(configXml);
         Element root = XmlDomParser.parse(stringReader, "root");
         Element child = XmlDomParser.getSingleChild(root, "child");
@@ -122,7 +129,9 @@ public class XmlDomParserTest extends TestCase {
     }
 
     public void testGetOptionalIntAttribute() throws Exception {
-        String configXml = "<root>" + "  <child optional1='' optional2='12'/>" + "</root>";
+        String configXml = "<root>" + 
+                           "  <child optional1='' optional2='12'/>" + 
+                           "</root>";
         StringReader stringReader = new StringReader(configXml);
         Element root = XmlDomParser.parse(stringReader, "root");
         Element child = XmlDomParser.getSingleChild(root, "child");
@@ -161,7 +170,9 @@ public class XmlDomParserTest extends TestCase {
     }
 
     public void testGetNodeValueAsObjectNonEmpty() throws Exception {
-        String configXml = "<root>" + "  ..." + "</root>";
+        String configXml = "<root>" + 
+                           "  ..." + 
+                           "</root>";
         StringReader stringReader = new StringReader(configXml);
         Element root = XmlDomParser.parse(stringReader, "root");
         assertEquals("  ...", XmlDomParser.getNodeValue(root));

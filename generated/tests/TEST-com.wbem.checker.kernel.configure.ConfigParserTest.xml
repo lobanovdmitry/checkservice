@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="BPM-DLOBANOV" name="com.wbem.checker.kernel.configure.ConfigParserTest" tests="16" time="0.178" timestamp="2012-12-09T10:15:34">
+  <properties>
+    <property name="java.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.file.type.services" value="file" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="ant.file.build_script" value="D:\workspace\checkservice\scripts\build.xml" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="env.FARLOCALPROFILE" value="C:\Users\DLobanov\AppData\Local\Far Manager\Profile" />
+    <property name="ant.file.type.build_script" value="file" />
+    <property name="env.PROMPT" value="$P$G" />
+    <property name="os.name" value="Windows 7" />
+    <property name="env.FP_NO_HOST_CHECK" value="NO" />
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.6.0_37\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_37\jre\classes" />
+    <property name="env.COMPUTERNAME" value="BPM-DLOBANOV" />
+    <property name="tmp" value="D:\workspace\checkservice/tmp" />
+    <property name="env.CommonProgramW6432" value="C:\Program Files\Common Files" />
+    <property name="env.ALLUSERSPROFILE" value="C:\ProgramData" />
+    <property name="sun.desktop" value="windows" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="net.sourceforge.cobertura.datafile" value="D:\workspace\checkservice\cobertura.ser" />
+    <property name="ant.home" value="D:\Tools\apache-ant-1.8.4" />
+    <property name="java.runtime.version" value="1.6.0_37-b06" />
+    <property name="env.HOMEPATH" value="\Users\DLobanov" />
+    <property name="user.name" value="DLobanov" />
+    <property name="env.FARPROFILE" value="C:\Users\DLobanov\AppData\Roaming\Far Manager\Profile" />
+    <property name="user.language" value="ru" />
+    <property name="env.windows_tracing_flags" value="3" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.6.0_37\jre\bin" />
+    <property name="ant.project.default-target" value="RunAllTestsWithReport" />
+    <property name="srcdir" value="D:\workspace\checkservice/src" />
+    <property name="ant.project.name" value="build_script" />
+    <property name="java.version" value="1.6.0_37" />
+    <property name="env.PROCESSOR_IDENTIFIER" value="Intel64 Family 6 Model 58 Stepping 9, GenuineIntel" />
+    <property name="classes" value="D:\workspace\checkservice/generated/classes" />
+    <property name="user.timezone" value="" />
+    <property name="env.asl.log" value="Destination=file" />
+    <property name="env.TEMP" value="C:\Users\DLobanov\AppData\Local\Temp" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="env.SSH_AGENT_PID" value="4388" />
+    <property name="classpath" value="./classes;./lib/protobuf-java-2.4.1.jar;./lib/protobuf-proxy-1.0.jar;./lib/xercesImpl-2.7.0.jar;./lib/sblim-cim-client2-2.0.9.3.jar;" />
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.6.0_37\jre\lib\endorsed" />
+    <property name="env._JAVACMD" value="C:\Program Files\Java\jdk1.6.0_37\bin\java.exe" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="env.HOMEDRIVE" value="C:" />
+    <property name="instrumented" value="D:\workspace\checkservice/generated/instrumented" />
+    <property name="sun.jnu.encoding" value="Cp1251" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="\" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="cobertura" value="D:\Tools\cobertura-1.9.4.1" />
+    <property name="ant.file.services" value="D:\workspace\checkservice\scripts\macrodefs.xml" />
+    <property name="java.class.version" value="50.0" />
+    <property name="user.country" value="RU" />
+    <property name="java.home" value="C:\Program Files\Java\jdk1.6.0_37\jre" />
+    <property name="env.PSModulePath" value="C:\Windows\system32\WindowsPowerShell\v1.0\Modules\" />
+    <property name="env.APPDATA" value="C:\Users\DLobanov\AppData\Roaming" />
+    <property name="env.PUBLIC" value="C:\Users\Public" />
+    <property name="env.windows_tracing_logfile" value="C:\BVTBin\Tests\installpackage\csilogfile.log" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="env.ComSpec" value="C:\Windows\system32\cmd.exe" />
+    <property name="env.OS" value="Windows_NT" />
+    <property name="env.CommonProgramFiles" value="C:\Program Files\Common Files" />
+    <property name="ant.file" value="D:\workspace\checkservice\scripts\build.xml" />
+    <property name="os.version" value="6.1" />
+    <property name="env.ProgramW6432" value="C:\Program Files" />
+    <property name="env._USE_CLASSPATH" value="no" />
+    <property name="env.=::" value="::\" />
+    <property name="path.separator" value=";" />
+    <property name="java.vm.version" value="20.12-b01" />
+    <property name="env.USERPROFILE" value="C:\Users\DLobanov" />
+    <property name="user.variant" value="" />
+    <property name="ant.library.dir" value="D:\Tools\apache-ant-1.8.4\lib" />
+    <property name="env.JAVA_HOME" value="C:\Program Files\Java\jdk1.6.0_37" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="env.TMP" value="C:\Users\DLobanov\AppData\Local\Temp" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="env.FARHOME" value="C:\Program Files\Far Manager" />
+    <property name="user.home" value="C:\Users\DLobanov" />
+    <property name="env.COBERTURA_HOME" value="D:\Tools\cobertura-1.9.4.1" />
+    <property name="env.ProgramData" value="C:\ProgramData" />
+    <property name="env.ProgramFiles(x86)" value="C:\Program Files (x86)" />
+    <property name="env.SESSIONNAME" value="Console" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.6.0_37\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.6.0_37\bin;D:\Tools\cobertura-1.9.4.1;D:\Tools\apache-ant-1.8.4\bin;." />
+    <property name="env.NUMBER_OF_PROCESSORS" value="4" />
+    <property name="java.vendor.url" value="http://java.sun.com/" />
+    <property name="testdir" value="D:\workspace\checkservice/test" />
+    <property name="env.USERDNSDOMAIN" value="LANIT" />
+    <property name="java.vm.vendor" value="Sun Microsystems Inc." />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="java.class.path" value="D:\workspace\checkservice\generated\instrumented;D:\workspace\checkservice\generated\classes;D:\workspace\checkservice\lib\protobuf-java-2.4.1.jar;D:\workspace\checkservice\lib\protobuf-proxy-1.0.jar;D:\workspace\checkservice\lib\xercesImpl-2.7.0.jar;D:\workspace\checkservice\lib\sblim-cim-client2-2.0.9.3.jar;D:\workspace\checkservice\lib\junit.jar;D:\Tools\cobertura-1.9.4.1\cobertura.jar;D:\Tools\cobertura-1.9.4.1\lib\asm-3.0.jar;D:\Tools\cobertura-1.9.4.1\lib\asm-tree-3.0.jar;D:\Tools\cobertura-1.9.4.1\lib\jakarta-oro-2.0.8.jar;D:\Tools\cobertura-1.9.4.1\lib\log4j-1.2.9.jar;D:\Tools\apache-ant-1.8.4\lib\ant-launcher.jar;D:\Tools\apache-ant-1.8.4\lib\ant.jar;D:\Tools\apache-ant-1.8.4\lib\ant-junit.jar;D:\Tools\apache-ant-1.8.4\lib\ant-junit4.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.4 compiled on May 22 2012" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.wbem.checker.kernel.configure.ConfigParserTest filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,D:\workspace\checkservice\generated\tests\TEST-com.wbem.checker.kernel.configure.ConfigParserTest.xml crashfile=D:\workspace\checkservice\junitvmwatcher5141708502860048806.properties propsfile=D:\workspace\checkservice\junit4067530627945509856.properties" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="classpath.src.externallib" value="wips/lib/${wips.lib.bsh};wips/lib/${wips.lib.jhall};wips/lib/${wips.lib.looks};wips/lib/${wips.lib.jgoodies-common};wips/lib/${wips.lib.serializer};wips/lib/${wips.lib.velocity};wips/lib/${wips.lib.velocityDep};wips/lib/${wips.lib.xalan};wips/lib/${wips.lib.xerces};wips/lib/${wips.lib.xmlSecurity};wips/lib/${wips.lib.xmlapis};wips/lib/${wips.lib.apachePoi};wips/lib/${wips.lib.sma};wips/lib/${wips.lib.jacob};wips/lib/${wips.lib.jtar};" />
+    <property name="ant.file.type" value="file" />
+    <property name="env.LOGONSERVER" value="\\FOBOS" />
+    <property name="env.windir" value="C:\Windows" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="env.PROCESSOR_ARCHITECTURE" value="AMD64" />
+    <property name="sun.os.patch.level" value="Service Pack 1" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="env.ProgramFiles" value="C:\Program Files" />
+    <property name="env.ANT_HOME" value="D:\Tools\apache-ant-1.8.4" />
+    <property name="env.UATDATA" value="C:\Windows\CCM\UATData\D9F8C395-CAB8-491d-B8AC-179A1FE1BE77" />
+    <property name="env.PROCESSOR_REVISION" value="3a09" />
+    <property name="java.io.tmpdir" value="C:\Users\DLobanov\AppData\Local\Temp\" />
+    <property name="env.CommonProgramFiles(x86)" value="C:\Program Files (x86)\Common Files" />
+    <property name="env.VBOX_INSTALL_PATH" value="C:\Program Files\Oracle\VirtualBox\" />
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi" />
+    <property name="env.SSH_AUTH_SOCK" value="/tmp/ssh-ngmsSn4664/agent.4664" />
+    <property name="env.SystemRoot" value="C:\Windows" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="os.arch" value="amd64" />
+    <property name="env.ANT_CMD_LINE_ARGS" value=" -f scripts\build.xml" />
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.6.0_37\jre\lib\ext;C:\Windows\Sun\Java\lib\ext" />
+    <property name="env.=D:" value="D:\workspace\checkservice" />
+    <property name="classpath.test" value="./lib/junit.jar;" />
+    <property name="user.dir" value="D:\workspace\checkservice" />
+    <property name="env.LOCALAPPDATA" value="C:\Users\DLobanov\AppData\Local" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="env.PATHEXT" value=".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC" />
+    <property name="env.Path" value="C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Java\jdk1.6.0_37\bin;D:\Tools\cobertura-1.9.4.1;D:\Tools\apache-ant-1.8.4\bin" />
+    <property name="basedir" value="D:\workspace\checkservice" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="D:\Tools\apache-ant-1.8.4\lib\ant.jar" />
+    <property name="env.USERNAME" value="DLobanov" />
+    <property name="env.SystemDrive" value="C:" />
+    <property name="file.encoding" value="Cp1251" />
+    <property name="env.FARLANG" value="English" />
+    <property name="env.USERDOMAIN" value="LANIT" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="env.=C:" value="C:\Program Files\Far Manager" />
+    <property name="ant.project.invoked-targets" value="RunAllTestsWithReport" />
+    <property name="generated" value="D:\workspace\checkservice/generated" />
+    <property name="env.PROCESSOR_LEVEL" value="6" />
+  </properties>
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testNominalCase" time="0.03" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testDefaultPortConfiguration" time="0.0010" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testDefaultThreadPoolConfiguration" time="0.0010" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTooSmallPortValue" time="0.0010" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testEmptyPortValue" time="0.0" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTooBigPortValue" time="0.0" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testPoolConfigurationIsNotFound" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testParseFile" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTimeAttributeIsNotFound" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTimeAttributeIsIncorrect" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTimeAttributeIsEmpty" time="0.0010" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTimeAttributeIsDays" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testTimeAttributeIsHours" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testModulesTag" time="0.0020" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testModulesTagNonEmpty" time="0.0030" />
+  <testcase classname="com.wbem.checker.kernel.configure.ConfigParserTest" name="testModuleCannotBeLoaded" time="0.0020" />
+  <system-out><![CDATA[Modules are not detected in config
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 seconds
+ * Modules: 
+
+'Port' parameter is not found, default value will be used!
+'Thread pool' parameter is not found, default value will be used!
+Modules are not detected in config
+Check service configuration:
+ * Port = 1399
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 seconds
+ * Modules: 
+
+'Port' parameter is not found, default value will be used!
+'Core pool size' parameter is not found, default value will be used!
+'Max pool size' parameter is not found, default value will be used!
+'Keep alive time' parameter is not found, default value will be used!
+Modules are not detected in config
+Check service configuration:
+ * Port = 1399
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 seconds
+ * Modules: 
+
+Modules are not detected in config
+Check service configuration:
+ * Port = 6553
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 seconds
+ * Modules: 
+
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 minutes
+ * Modules: 
+
+Modules are not detected in config
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 days
+ * Modules: 
+
+Modules are not detected in config
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 hours
+ * Modules: 
+
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 days
+ * Modules: 
+
+Check service configuration:
+ * Port = 4126
+ * Thread pool configuration:
+    Core pool size = 10
+    Max pool size = 10
+    Keep alive time = 10 days
+ * Modules: 
+com.wbem.checker.api.DummyRequestExecutor
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
