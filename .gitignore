@@ -18,4 +18,6 @@ install.php
 /modules/shop/*
 /modules/system/*
 /modules/users/*
+/bin/*
+/generated/*
 # add content_*.php if you don't want erase client changes to content
