@@ -18,7 +18,7 @@ public class FakeWBEMConnection implements WBEMConnection {
     }
 
     @Override
-    public CIMInstance findSingleInstance(String path) throws WBEMException {
+    public CIMInstance[] getAllInstances(String path) throws WBEMException {
         return null;
     }
 

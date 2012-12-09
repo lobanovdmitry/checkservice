@@ -9,5 +9,5 @@ public interface WBEMConnection {
 
   public boolean isInstanceExist(String path, String property, Object value) throws WBEMException;
 
-  public CIMInstance findSingleInstance(String path) throws WBEMException;
+  public CIMInstance[] getAllInstances(String path) throws WBEMException;
 }

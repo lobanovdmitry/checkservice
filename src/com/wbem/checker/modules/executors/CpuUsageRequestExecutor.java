@@ -4,6 +4,7 @@ import javax.cim.UnsignedInteger16;
 
 import com.wbem.checker.api.connection.WBEMConnection;
 import com.wbem.checker.api.data.Response;
+import com.wbem.checker.api.exceptions.SourceIsNotFoundException;
 
 public class CpuUsageRequestExecutor extends AbstractLoadPercentageExecutor {
   public static final String REQUEST_TYPE = "cpu_usage";
@@ -14,6 +15,9 @@ public class CpuUsageRequestExecutor extends AbstractLoadPercentageExecutor {
   @Override
   public Response execute(WBEMConnection connection) throws Exception {
     Object[] values = connection.getPropertyValuesOfAllInstances(path, property);
+    if ( values.length == 0) {
+        throw new SourceIsNotFoundException(path, property, "evaluate current CPU loading");
+    }
     int result = 0;
     for (Object value : values) {
       UnsignedInteger16 integer16 = (UnsignedInteger16) value;

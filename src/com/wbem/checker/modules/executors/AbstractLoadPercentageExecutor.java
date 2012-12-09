@@ -12,6 +12,9 @@ public abstract class AbstractLoadPercentageExecutor implements RequestExecutor 
 
     private int warningValue;
     private int criticalValue;
+    
+    public static final String warningParam = "-warn";
+    public static final String critParam = "-crit";
 
     protected abstract String getMessage();
 
@@ -35,13 +38,13 @@ public abstract class AbstractLoadPercentageExecutor implements RequestExecutor 
 
     @Override
     public String[] getRequiredParameters() {
-        return new String[] { "-w", "-c" };
+        return new String[] { warningParam, critParam };
     }
 
     @Override
     public void validateRequest(Request request) throws InvalidParametersException {
-        String waringPercentage = request.getParameterValue("-w");
-        String criticalPercentage = request.getParameterValue("-c");
+        String waringPercentage = request.getParameterValue(warningParam);
+        String criticalPercentage = request.getParameterValue(critParam);
         if (waringPercentage.endsWith("%")) {
             waringPercentage = waringPercentage.substring(0, waringPercentage.length() - 1);
         }

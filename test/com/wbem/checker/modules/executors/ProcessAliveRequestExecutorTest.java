@@ -11,14 +11,14 @@ import com.wbem.checker.modules.executors.dummy.FakeWBEMConnection;
 public class ProcessAliveRequestExecutorTest extends ExecutorsTestCase {
 
     public void testRequestTypeAndAuth() throws Exception {
-        assertRequestTypeAndAuth("is_process_alive", true, "-n");
+        assertRequestTypeAndAuth("is_process_alive", true, "-ps_name");
     }
     
     public void testNominalCase() throws Exception {
         executor.validateRequest(new FakeRequest() {
             @Override
             public String getParameterValue(String parameterName) {
-                return "-n".equals(parameterName) ? "sshd" : null;
+                return "-ps_name".equals(parameterName) ? "sshd" : null;
             }
         });
         Response response = executor.execute(new FakeWBEMConnection() {
@@ -36,7 +36,7 @@ public class ProcessAliveRequestExecutorTest extends ExecutorsTestCase {
         executor.validateRequest(new FakeRequest() {
             @Override
             public String getParameterValue(String parameterName) {
-                return "-n".equals(parameterName) ? "sshd" : null;
+                return "-ps_name".equals(parameterName) ? "sshd" : null;
             }
         });
         Response response = executor.execute(new FakeWBEMConnection() {

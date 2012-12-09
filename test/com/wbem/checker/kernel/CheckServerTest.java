@@ -16,7 +16,7 @@ public class CheckServerTest extends TestCase {
         CheckServer.main("--config", "resources/empty.xml");
     }
 
-    public void testStartCheckServer() throws Exception {
+    public void testStartCheckServerWithBusyPort() throws Exception {
         ServerConfiguration configuration = new ServerConfiguration();
         new CheckServer(configuration);
     }

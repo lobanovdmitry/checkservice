@@ -7,13 +7,14 @@ import com.wbem.checker.api.RequestExecutor;
 import com.wbem.checker.api.data.Response;
 import com.wbem.checker.api.data.ResponseConstants;
 import com.wbem.checker.api.exceptions.InvalidParametersException;
+import com.wbem.checker.api.exceptions.SourceIsNotFoundException;
 import com.wbem.checker.modules.executors.dummy.FakeRequest;
 import com.wbem.checker.modules.executors.dummy.FakeWBEMConnection;
 
 public class CpuUsageRequestExecutorTest extends ExecutorsTestCase {
     
     public void testRequestTypeAndAuth() throws Exception {
-        assertRequestTypeAndAuth("cpu_usage", true, "-w", "-c");
+        assertRequestTypeAndAuth("cpu_usage", true, "-warn", "-crit");
     }
 
     public void testWarningCpuLoading() throws Exception {
@@ -116,6 +117,19 @@ public class CpuUsageRequestExecutorTest extends ExecutorsTestCase {
         }
     }
     
+    public void testPropertyIsNotFound() throws Exception {
+        try {
+            executor.execute(new FakeWBEMConnection() {
+                @Override
+                public Object[] getPropertyValuesOfAllInstances(String path, String property) throws WBEMException {
+                    return new Object[0];
+                }
+            });
+        } catch (SourceIsNotFoundException e) {
+            assertEquals("Impossible to evaluate current CPU loading because: Property 'LoadPercentage' of CIM_Processor's instance is not found!", e.getMessage());
+        }
+            
+    }
 
     @Override
     protected RequestExecutor initExecutor() {
@@ -134,11 +148,11 @@ public class CpuUsageRequestExecutorTest extends ExecutorsTestCase {
         
         @Override
         public String getParameterValue(String parameterName) {
-            if ("-w".equals(parameterName)) {
+            if ("-warn".equals(parameterName)) {
                 return warning;
             }
 
-            if ("-c".equals(parameterName)) {
+            if ("-crit".equals(parameterName)) {
                 return critical;
             }
             return null;

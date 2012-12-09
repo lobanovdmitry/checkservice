@@ -1,6 +1,5 @@
 package com.wbem.checker.modules.executors;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -39,10 +38,6 @@ public class PingRequestExecutor implements RequestExecutor {
       response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
       response.setCheckSeverity(ResponseConstants.SEVERITY_UNKNOWN);
       response.setMessage("Unknown host: '" + hostname + "'");
-    } catch (IOException e) {
-      response.setRequestCorrect(ResponseConstants.REQUEST_STATUS_OK);
-      response.setCheckSeverity(ResponseConstants.SEVERITY_UNKNOWN);
-      response.setMessage(e.getMessage());
     }
     return response;
   }

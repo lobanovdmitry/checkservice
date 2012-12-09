@@ -11,7 +11,7 @@ public class ProcessAliveRequestExecutor implements RequestExecutor {
   private static final String NAME_ATTR = "Name";
   private static final String CIM_PROCESS = "CIM_Process";
   private static final String REQUEST_TYPE = "is_process_alive";
-  private static final String PROCESS_NAME_PARAMETER = "-n";
+  private static final String PROCESS_NAME_PARAMETER = "-ps_name";
   
   private String processName;
   
