@@ -20,5 +20,4 @@ public class CheckServerTest extends TestCase {
         ServerConfiguration configuration = new ServerConfiguration();
         new CheckServer(configuration);
     }
-
 }
