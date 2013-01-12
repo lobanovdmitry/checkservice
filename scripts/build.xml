@@ -77,7 +77,7 @@
 	
 	<target name="CreateJar">
 		<createEmptyDir dir="${tmp}"/>
-		<createJar srcdir="${basedir}/src" classpath="${classpath}" jarfile="${generated}/main.jar"  tmpdir="${tmp}"/>
+		<createJar srcdir="${basedir}/src" classpath="${classpath}" jarfile="./cim_checker_pack/lib/cim-checker-${version}.jar"  tmpdir="${tmp}"/>
 		<delete dir="${tmp}"/>
 	</target>
 </project>

@@ -2,9 +2,9 @@ package com.wbem.checker.kernel;
 
 import java.net.MalformedURLException;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.ConcurrentHashMap;
 
 import javax.wbem.WBEMException;
 
@@ -14,8 +14,8 @@ public class ConnectionPool {
     
   private static final int DEFAULT_TIME_OUT = 1*60*1000;
   
-  private static Map<HostnameAndCredentials, WBEMConnectionImpl> allConnections = new HashMap<HostnameAndCredentials, WBEMConnectionImpl>();
-  private static Map<HostnameAndCredentials, Long> liveConnectionTime = new HashMap<HostnameAndCredentials, Long>();
+  private static Map<HostnameAndCredentials, WBEMConnectionImpl> allConnections = new ConcurrentHashMap<HostnameAndCredentials, WBEMConnectionImpl>();
+  private static Map<HostnameAndCredentials, Long> liveConnectionTime = new ConcurrentHashMap<HostnameAndCredentials, Long>();
   private static ConnectionsHeartBeat heartBeatDeamon;
   
   static {
@@ -41,7 +41,7 @@ public class ConnectionPool {
     return connectionHolder;
   }
   
-  public static synchronized void removeConnection(HostnameAndCredentials credentials) {
+  static void removeConnection(HostnameAndCredentials credentials) {
     allConnections.remove(credentials);
     liveConnectionTime.remove(credentials);
   }

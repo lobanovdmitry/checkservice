@@ -228,7 +228,7 @@ public class ServerConfiguration {
     public String toString() {
       StringBuffer buffer = new StringBuffer(" * Modules: \n");
       for( RequestExecutor executor : modules ) {
-        buffer.append(executor.getClass().getCanonicalName()).append("\n");
+        buffer.append("    - ").append(executor.getRequestType()).append("\n");
       }
       return buffer.toString();
     }

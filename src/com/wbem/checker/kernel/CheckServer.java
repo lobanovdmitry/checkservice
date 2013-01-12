@@ -52,7 +52,7 @@ public class CheckServer {
   }
   
   private static void printUsage() {
-    System.out.println("Usage: java com.wbem.checker.CheckServer [--config|-c config_file.xml]");
+    System.out.println("Usage: java com.wbem.checker.kernel.CheckServer [--config|-c config_file.xml]");
   }
   
   private static ServerConfiguration processArgs(String[] args) {
